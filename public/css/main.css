@@ -1,0 +1,115 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700';
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    min-height: 100%;
+    padding-bottom: 70px;
+    margin: 0;
+}
+
+.container {
+    box-sizing: border-box;
+    width: 900px;
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+#siteHeader {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: #FFF;
+    border-bottom: 1px solid #CCC;
+}
+
+#siteHeader:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+#siteHeader .brand {
+    float: left;
+    padding-left: 44px;/* 36 + 8 */
+    background: url('../images/header_logo.png') no-repeat left center;
+    background-size: 36px 40px;
+}
+
+#siteHeader .brand {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #00B298;
+}
+
+#siteHeader .brand .color2 {
+    color: #000;
+}
+
+#siteHeader nav {
+    float: right;
+    margin-top: 14px;
+}
+
+#siteHeader nav a.button {
+    float: left;
+    display: block;
+    font-weight: 600;
+    font-size: 0.7rem;
+    line-height: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 8px;
+    border-radius: 4px;
+    border: 2px solid #00B298;
+    margin-left: 10px;
+    opacity: 0.6;
+    transition: opacity 0.2s linear;
+}
+
+#siteHeader nav a.button.main {
+    color: #FFF;
+    background: #00B298;
+}
+
+#siteHeader nav a.button.secondary {
+    color: #00B298;
+    background: #FFF;
+}
+
+#siteHeader nav a:hover,
+#siteHeader nav a.active {
+    opacity: 1;
+}
+
+#siteHeader nav a:first-child {
+    margin-left: 0;
+}
+
+#siteContent {
+    font-size: 0.9rem;
+    padding: 20px 0 50px 0;
+}
+
+#siteContent h1 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+}
+
+#siteFooter {
+    position: absolute;
+    bottom: 0; left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    padding-top: 20px;
+    border-top: 1px solid #CCC;
+}
