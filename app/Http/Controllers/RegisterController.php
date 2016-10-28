@@ -6,50 +6,28 @@ use App\Http\Controllers\BaseController;
 use View;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Redirect;
+use Illuminate\Support\MessageBag;
 
 class RegisterController extends BaseController {
 
-    public function __construct() {
-        $this->has_errors = false;
-        $this->error_message = '';
-    }
-
     public function index() {
-        return View::make('pages/login', array(
-            'has_errors' => $this->has_errors,
-            'error_message' => $this->error_message
-        ));
+        return View::make('pages/register');
     }
 
-    public function submit() {
-        do {
-            // Validate username field.
-            $username = '';
-            if (!isset($_POST['user']) || ($username = trim($_POST['user'])) == '') {
-                $this->has_errors = true;
-                $this->error_message = 'Please enter a valid username.';
-                break;
-            }
-            // Validate password field.
-            $password = '';
-            if (!isset($_POST['pass']) || ($password = trim($_POST['pass'])) == '') {
-                $this->has_errors = true;
-                $this->error_message = 'Please enter a valid password.';
-                break;
-            }
-            // Validate confirm password field.
-            if (!isset($_POST['pass_confirm']) || trim($_POST['pass_confirm']) != $password) {
-                $this->has_errors = true;
-                $this->error_message = 'The passwords do not match.';
-                break;
-            }
-            // Register user.
-            Auth::create
-            if (Auth::attempt(['email' => $username, 'password' => $password], $remember)) {
-                //TODO
-            }
-        } while (0);
+    public function submit(Request $request) {
 
-        return $this->index();
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed'
+        ]);
+
+        $request->merge(['password' => Hash::make($request->password)]);
+        $user = User::create($request->all());
+
+        return Redirect::route('register.index')
+            ->withInput($request->except(['password', 'password_confirmation']));
     }
 }

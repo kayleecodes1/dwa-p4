@@ -6,47 +6,37 @@ use App\Http\Controllers\BaseController;
 use View;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Redirect;
+use Illuminate\Support\MessageBag;
 
 class LoginController extends BaseController {
 
-    public function __construct() {
-        $this->has_errors = false;
-        $this->error_message = '';
-    }
-
     public function index() {
-        return View::make('pages/login', array(
-            'has_errors' => $this->has_errors,
-            'error_message' => $this->error_message
-        ));
+        return View::make('pages/login');
     }
 
-    public function submit() {
-        do {
-            // Validate username field.
-            $username = '';
-            if (!isset($_POST['user']) || ($username = trim($_POST['user'])) == '') {
-                $this->has_errors = true;
-                $this->error_message = 'Please enter a valid username and password.';
-                break;
-            }
-            // Validate password field.
-            $password = '';
-            if (!isset($_POST['pass']) || ($password = trim($_POST['pass'])) == '') {
-                $this->has_errors = true;
-                $this->error_message = 'Please enter a valid username and password.';
-                break;
-            }
-            // Get remember me field.
-            $remember = isset($_POST['remember']) && $_POST['remember'] == 'true';
-            // Validate login credentials.
-            if (Auth::attempt(['email' => $username, 'password' => $password], $remember)) {
-                //TODO
-            }
-        } while (0);
+    public function submit(Request $request) {
 
-        return $this->index();
+        $this->validate($request, [
+            //'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6',
+            'remember' => ''
+        ]);
+
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $remember = $request->input('remember');
+
+        if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
+            return Redirect::route('home.index');
+        }
+
+        return Redirect::route('login.index')
+            ->withInput($request->except('password'))
+            ->with([
+                'errors' => new MessageBag(['The username and password are incorrect.'])
+            ]);
     }
 }
-
-//Auth::logout();

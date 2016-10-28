@@ -1,4 +1,10 @@
-#siteContent .error {
+#siteContent ul.errors {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#siteContent ul.errors li {
     color: rgb(178, 64, 58);
     background: rgba(178, 64, 58, 0.2);
     padding: 10px;
@@ -44,7 +50,8 @@
     opacity: 0.6;
 }
 
-#siteContent form input[type='text'] {
+#siteContent form input[type='text'],
+#siteContent form input[type='password'] {
     font-size: 0.8rem;
     box-sizing: border-box;
     height: 32px;
@@ -55,11 +62,13 @@
     outline: none;
 }
 
-#siteContent form input[type='text'].small {
+#siteContent form input[type='text'].small,
+#siteContent form input[type='password'].small {
     width: 60px;
 }
 
-#siteContent form input[type='text'].centered {
+#siteContent form input[type='text'].centered,
+#siteContent form input[type='password'].centered {
     text-align: center;
 }
 

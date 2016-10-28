@@ -1,0 +1,19 @@
+.form_login {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.form_login label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.form_login label span {
+    font-size: 13px;
+}
+
+.form_login label input[type='text'],
+.form_login label input[type='password'] {
+    display: block;
+    width: 100%;
+}

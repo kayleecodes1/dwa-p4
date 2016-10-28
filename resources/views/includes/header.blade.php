@@ -6,7 +6,7 @@
             </div>
         </a>
         <nav>
-            <a href="{{ URL::route('login.index') }}" class="button main">
+            <a href="{{ URL::route('register.index') }}" class="button main">
                 Create a Free Account
             </a>
             <a href="{{ URL::route('login.index') }}" class="button secondary">

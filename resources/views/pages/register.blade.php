@@ -2,28 +2,35 @@
 
 @section('head')
     <link rel="stylesheet" href="{{ URL::asset('css/form.css') }}" />
-    <link rel="stylesheet" href="{{ URL::asset('css/register.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/login.css') }}" />
 @stop
 
 @section('content')
-    <form id="form_register" method="POST">
-        <?php if ($has_errors): ?>
-        <div class="error">
-            {{ $error_message }}
-        </div>
-        <?php endif; ?>
+    <form id="form_register" class="form_login" method="POST">
+        @if (count($errors) > 0)
+            <ul class="errors">
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
         <label>
-            Username
-            <input type="text" name="user" />
-        <label>
-        <label>
-            Password
-            <input type="password" name="pass" />
+            <span>Name</span>
+            <input type="text" name="name" value="{{ old('name') }}" />
         </label>
         <label>
-            Confirm Password
-            <input type="password" name="pass_confirm" />
+            <span>Email</span>
+            <input type="text" name="email" value="{{ old('email') }}" />
         </label>
-        <button class="main">Login</button>
+        <label>
+            <span>Password</span>
+            <input type="password" name="password" />
+        </label>
+        <label>
+            <span>Confirm Password</span>
+            <input type="password" name="password_confirmation" />
+        </label>
+        <button class="main">Register</button>
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>
 @stop
