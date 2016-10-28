@@ -18,7 +18,7 @@
         <label>
         <label>
             Password
-            <input type="text" name="pass" />
+            <input type="password" name="pass" />
         </label>
         <label>
             Remember me

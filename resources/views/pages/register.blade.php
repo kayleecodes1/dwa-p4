@@ -18,11 +18,11 @@
         <label>
         <label>
             Password
-            <input type="text" name="pass" />
+            <input type="password" name="pass" />
         </label>
         <label>
             Confirm Password
-            <input type="text" name="pass_confirm" />
+            <input type="password" name="pass_confirm" />
         </label>
         <button class="main">Login</button>
     </form>
