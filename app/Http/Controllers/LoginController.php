@@ -19,15 +19,14 @@ class LoginController extends BaseController {
     public function submit(Request $request) {
 
         $this->validate($request, [
-            //'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'email' => 'required|email|max:255',
             'password' => 'required|min:6',
             'remember' => ''
         ]);
 
         $email = $request->input('email');
         $password = $request->input('password');
-        $remember = $request->input('remember');
+        $remember = $request->input('remember') == 'true';
 
         if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
             return Redirect::route('home.index');
@@ -36,7 +35,7 @@ class LoginController extends BaseController {
         return Redirect::route('login.index')
             ->withInput($request->except('password'))
             ->with([
-                'errors' => new MessageBag(['The username and password are incorrect.'])
+                'errors' => new MessageBag(['auth' => 'The username and password are incorrect.'])
             ]);
     }
 }

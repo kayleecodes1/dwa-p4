@@ -1,17 +1,19 @@
 <?php
 
-/*namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\BaseController;
-use View;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Redirect;
 
-class LoginController extends BaseController {
+class LogoutController extends BaseController {
 
-    public function submit() {
+    public function submit(Request $request) {
 
         Auth::logout();
+
         return Redirect::route('home.index');
     }
 }

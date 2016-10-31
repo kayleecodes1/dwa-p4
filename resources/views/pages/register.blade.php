@@ -6,25 +6,33 @@
 @stop
 
 @section('content')
-    <form id="form_register" class="form_login" method="POST">
-        @if (count($errors) > 0)
-            <ul class="errors">
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        @endif
+    <form id="form_register" class="form_login" method="POST" action="{{ route('register.submit') }}">
         <label>
             <span>Name</span>
             <input type="text" name="name" value="{{ old('name') }}" />
+            @if ($errors->has('name'))
+                <span class="error">
+                    {{ $errors->first('name') }}
+                </span>
+            @endif
         </label>
         <label>
             <span>Email</span>
             <input type="text" name="email" value="{{ old('email') }}" />
+            @if ($errors->has('email'))
+                <span class="error">
+                    {{ $errors->first('email') }}
+                </span>
+            @endif
         </label>
         <label>
             <span>Password</span>
             <input type="password" name="password" />
+            @if ($errors->has('password'))
+                <span class="error">
+                    {{ $errors->first('password') }}
+                </span>
+            @endif
         </label>
         <label>
             <span>Confirm Password</span>

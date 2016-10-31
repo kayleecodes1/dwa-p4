@@ -1,5 +1,7 @@
 <?php
 
+Auth::routes();
+
 Route::get('/', [
     'as' => 'home.index',
     'uses' => 'HomeController@index'

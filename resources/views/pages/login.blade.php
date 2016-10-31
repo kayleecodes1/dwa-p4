@@ -6,21 +6,29 @@
 @stop
 
 @section('content')
-    <form id="form_login" class="form_login" method="POST">
-        @if (count($errors) > 0)
-            <ul class="errors">
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+    <form id="form_login" class="form_login" method="POST" action="{{ route('login.submit') }}">
+        @if ($errors->has('auth'))
+            <span class="error">
+                {{ $errors->first('auth') }}
+            </span>
         @endif
         <label>
             <span>Email</span>
             <input type="text" name="email" value="{{ old('email') }}" />
+            @if ($errors->has('email'))
+                <span class="error">
+                    {{ $errors->first('email') }}
+                </span>
+            @endif
         </label>
         <label>
             <span>Password</span>
             <input type="password" name="password" />
+            @if ($errors->has('password'))
+                <span class="error">
+                    {{ $errors->first('password') }}
+                </span>
+            @endif
         </label>
         <label>
             <span>Remember me</span>

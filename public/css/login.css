@@ -5,6 +5,7 @@
 
 .form_login label {
     display: block;
+    margin-right: 0;
     margin-bottom: 6px;
 }
 

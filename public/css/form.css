@@ -1,57 +1,52 @@
-#siteContent ul.errors {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#siteContent ul.errors li {
+span.error {
+    display: block;
     color: rgb(178, 64, 58);
     background: rgba(178, 64, 58, 0.2);
-    padding: 10px;
+    padding: 6px 10px;
     border-radius: 3px;
     border: 1px solid rgb(178, 64, 58);
-    margin-bottom: 16px;
+    margin: 4px 0;
 }
 
-#siteContent form {
+form {
     margin-bottom: 20px;
 }
 
-#siteContent form fieldset {
+form fieldset {
     padding: 0;
     border: none;
     outline: none;
     margin: 0 0 10px 0;
 }
 
-#siteContent form fieldset ul {
+form fieldset ul {
     list-style: none;
     padding: 0 0 0 20px;
     margin: 0;
 }
 
-#siteContent form fieldset legend,
-#siteContent form label {
+form fieldset legend,
+form label {
     font-size: 0.9rem;
     margin-right: 10px;
 }
 
-#siteContent form label {
+form label {
     margin-bottom: 10px;
 }
 
-#siteContent form fieldset legend {
+form fieldset legend {
     margin-bottom: 4px;
 }
 
-#siteContent form label span.annotation {
+form label span.annotation {
     font-size: 0.8rem;
     margin-left: 4px;
     opacity: 0.6;
 }
 
-#siteContent form input[type='text'],
-#siteContent form input[type='password'] {
+form input[type='text'],
+form input[type='password'] {
     font-size: 0.8rem;
     box-sizing: border-box;
     height: 32px;
@@ -62,17 +57,17 @@
     outline: none;
 }
 
-#siteContent form input[type='text'].small,
-#siteContent form input[type='password'].small {
+form input[type='text'].small,
+form input[type='password'].small {
     width: 60px;
 }
 
-#siteContent form input[type='text'].centered,
-#siteContent form input[type='password'].centered {
+form input[type='text'].centered,
+form input[type='password'].centered {
     text-align: center;
 }
 
-#siteContent form button {
+form button {
     box-sizing: border-box;
     width: auto;
     height: 32px;
@@ -88,11 +83,11 @@
     cursor: pointer;
 }
 
-#siteContent form button.main {
+form button.main {
     color: #FFF;
     background: #23888C;
 }
 
-#siteContent form button:hover {
+form button:hover {
     opacity: 0.7;
 }

@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\BaseController;
+use App\User;
 use View;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Redirect;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\MessageBag;
+use Redirect;
 
 class RegisterController extends BaseController {
 
