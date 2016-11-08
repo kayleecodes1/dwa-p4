@@ -8,6 +8,9 @@ This project uses Composer for dependency management. PHP and Composer must be i
 
 ```sh
 composer install
+php artisan migrate
+# If seeding with test data.
+php artisan db:seed
 ```
 
 The files in `public` should be served publicly using a PHP server.
