@@ -15,7 +15,7 @@ use Redirect;
 class RegisterController extends BaseController {
 
     public function index() {
-        return View::make('pages/register');
+        return View::make('pages/auth/register');
     }
 
     public function submit(Request $request) {

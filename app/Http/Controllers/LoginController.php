@@ -13,7 +13,7 @@ use Illuminate\Support\MessageBag;
 class LoginController extends BaseController {
 
     public function index() {
-        return View::make('pages/login');
+        return View::make('pages/auth/login');
     }
 
     public function submit(Request $request) {
