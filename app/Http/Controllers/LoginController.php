@@ -20,7 +20,7 @@ class LoginController extends BaseController {
 
         $this->validate($request, [
             'email' => 'required|email|max:255',
-            'password' => 'required|min:6',
+            'password' => 'required|min:4',
             'remember' => ''
         ]);
 
