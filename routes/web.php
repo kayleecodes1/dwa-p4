@@ -31,3 +31,8 @@ Route::post('/logout', [
     'as' => 'logout.submit',
     'uses' => 'LogoutController@submit'
 ]);
+
+Route::get('/projects/{project_id}', [
+    'as' => 'project.index',
+    'uses' => 'ProjectController@index'
+]);

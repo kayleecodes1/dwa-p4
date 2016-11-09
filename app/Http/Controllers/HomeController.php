@@ -12,16 +12,13 @@ class HomeController extends BaseController {
     public function index() {
 
         $view = View::make('pages/home');
-//TODO: is this the wrong Auth ?
-        // If the user is authenticated, //TODO.
-        if ($user = Auth::user()) {
-            $view = $view->with('projects', array(
-                'projects' => $user->projects
-            ));
-        }
-        // If the user is not authenticated.
-        else {
 
+        if ($user = Auth::user()) {
+            $view = $view->with([
+                'show_projects' => true,
+                'owned_projects' => $user->owned_projects,
+                'other_projects' => $user->other_projects
+            ]);
         }
 
         return $view;
