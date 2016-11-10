@@ -10,14 +10,14 @@
         <h1>Tasks Assigned to You</h1>
         @foreach (['Your Projects' => $owned_projects, 'Other Projects' => $other_projects] as $heading => $projects)
             @if ($heading == 'Your Projects')
-                <a>Create New Project</a>
+                <a href="{{ URL::route('projects.create') }}">Create New Project</a>
             @endif
             <h2>{{ $heading }}</h2>
             @if (count($projects) == 0)
                 No projects to display
             @endif
             @foreach ($projects as $project)
-                <a href="{{ URL::route('project.index', ['' => $project->id]) }}">
+                <a href="{{ URL::route('projects.show', ['project_id' => $project->id]) }}">
                     <h3>{{ $project->title }}</h3>
                 </a>
                 @include('includes/task_list', ['tasks' => $project->user_tasks])

@@ -20,6 +20,11 @@ class HomeController extends BaseController {
                 'other_projects' => $user->other_projects
             ]);
         }
+        else {
+            $view = $view->with([
+                'show_projects' => false
+            ]);
+        }
 
         return $view;
     }
