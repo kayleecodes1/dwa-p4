@@ -16,6 +16,7 @@
     <h1>{{ $project->title }}</h1>
     <p>{{ $project->description }}</p>
     <h2>Team Members</h2>
+    <a href="{{ route('project_members.create', ['project_id' => $project->id]) }}">Add Team Member</a>
     <ul>
         @foreach ($project->users as $user)
             <li>{{ $user->name }}{{ $user->id == $project->owner_id ? ' (Owner)' : '' }}</li>

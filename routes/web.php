@@ -88,7 +88,7 @@ Route::delete('/projects/{project_id}', [
 /*
  * Project Members
  */
-/*
+
 // Show form to add a user to a project.
 Route::get('/projects/{project_id}/members/add', [
     'as' => 'project_members.create',
@@ -106,7 +106,7 @@ Route::delete('/projects/{project_id}/members/{user_id}', [
     'as' => 'project_members.destroy',
     'uses' => 'ProjectMemberController@destroy'
 ]);
-*/
+
 
 /*
  * Tasks
