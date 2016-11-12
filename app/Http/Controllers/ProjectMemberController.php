@@ -46,8 +46,9 @@ class ProjectMemberController extends BaseController {
 
         $this->validate($request, [
             'user_id' => [
-                'required|exists:users',
-                Rule::unique('project_users')->where(function ($query) {
+                'required',
+                'exists:users,id',
+                Rule::unique('project_users')->where(function ($query) use (&$project_id) {
                     $query->where('project_id', $project_id);
                 })
             ]

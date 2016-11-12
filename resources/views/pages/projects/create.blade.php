@@ -18,9 +18,7 @@
         </label>
         <label>
             <span>Description</span>
-            <textarea name="description">
-                {{ old('description') }}
-            </textarea>
+            <textarea name="description">{{ old('description') }}</textarea>
             @if ($errors->has('description'))
                 <span class="error">
                     {{ $errors->first('description') }}

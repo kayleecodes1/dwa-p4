@@ -20,7 +20,19 @@
                 <a href="{{ URL::route('projects.show', ['project_id' => $project->id]) }}">
                     <h3>{{ $project->title }}</h3>
                 </a>
-                @include('includes/task_list', ['tasks' => $project->user_tasks])
+                <ul>
+                    @if (count($project->user_tasks) > 0)
+                        @foreach ($project->user_tasks as $task)
+                            <li>
+                                {{ $task->title }}
+                                {{ $task->status }}
+                            </li>
+                        @endforeach
+                    @else
+                        No tasks.
+                    @endif
+                </ul>
+
             @endforeach
         @endforeach
     @else

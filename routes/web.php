@@ -111,7 +111,7 @@ Route::delete('/projects/{project_id}/members/{user_id}', [
 /*
  * Tasks
  */
-/*
+
 // Show form to create a task.
 Route::get('/projects/{project_id}/tasks/create', [
     'as' => 'tasks.create',
@@ -141,4 +141,3 @@ Route::delete('/projects/{project_id}/tasks/{task_id}', [
     'as' => 'tasks.destroy',
     'uses' => 'TaskController@destroy'
 ]);
-*/
