@@ -11,9 +11,9 @@ class CreateTasksTable extends Migration {
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('project_id')->unsigned();
-            $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->integer('assignee_id')->unsigned()->nullable();
-            $table->foreign('assignee_id')->references('id')->on('users');
+            $table->foreign('assignee_id')->references('id')->on('users')->onDelete('set null');
             $table->string('title');
             $table->string('description');
             $table->enum('status', ['To Do', 'In Progress', 'Done']);
