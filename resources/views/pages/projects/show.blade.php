@@ -16,7 +16,9 @@
     @endif
     <p>{{ $project->description }}</p>
     <h2>Team Members</h2>
-    <a href="{{ route('project_members.create', ['project_id' => $project->id]) }}">Add Team Member</a>
+    @if (Auth::user()->id == $project->owner_id)
+        <a href="{{ route('project_members.create', ['project_id' => $project->id]) }}">Add Team Member</a>
+    @endif
     <ul>
         @foreach ($project->users as $user)
             <li>{{ $user->name }}{{ $user->id == $project->owner_id ? ' (Owner)' : '' }}</li>
