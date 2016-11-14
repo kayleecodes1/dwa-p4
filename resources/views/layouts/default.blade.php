@@ -14,5 +14,8 @@
         </div>
     </main>
     @include('includes/footer')
+    @include('includes/flash-message')
+    <script src="{{ URL::asset('js/main.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>

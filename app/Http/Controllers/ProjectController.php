@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\BaseController;
-use View;
-
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
-use Redirect;
-use Illuminate\Support\Facades\DB;
 use App\Project;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use Redirect;
+use View;
 
 class ProjectController extends BaseController {
 
@@ -48,6 +48,9 @@ class ProjectController extends BaseController {
             'user_id' => $user->id
         ]);
 
+        Session::flash('flash_message', 'The new project was successfully created.');
+        Session::flash('flash_type', 'success');
+
         return Redirect::route('projects.show', ['project_id' => $project->id]);
     }
 
@@ -78,6 +81,9 @@ class ProjectController extends BaseController {
 
         $project->save();
 
+        Session::flash('flash_message', 'The project was successfully updated.');
+        Session::flash('flash_type', 'success');
+
         return Redirect::route('projects.show', ['project_id' => $project_id]);
     }
 
@@ -86,6 +92,9 @@ class ProjectController extends BaseController {
         //TODO: should check if user is owner
 
         Project::destroy($project_id);
+
+        Session::flash('flash_message', 'The project was successfully deleted.');
+        Session::flash('flash_type', 'success');
 
         return Redirect::route('home.index');
     }

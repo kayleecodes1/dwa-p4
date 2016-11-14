@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\BaseController;
-use View;
-
-use Illuminate\Support\Facades\Auth;
+use App\Project;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 use Redirect;
-use Illuminate\Support\Facades\DB;
-use App\User;
-use App\Project;
+use View;
 
 class ProjectMemberController extends BaseController {
 
@@ -61,6 +61,9 @@ class ProjectMemberController extends BaseController {
             'user_id' => $user_id
         ]);
 
+        Session::flash('flash_message', 'The team member was successfully added.');
+        Session::flash('flash_type', 'success');
+
         return Redirect::route('projects.show', ['project_id' => $project_id]);
     }
 
@@ -77,6 +80,9 @@ class ProjectMemberController extends BaseController {
                 ['user_id', $user_id]
             ])
             ->delete();
+
+        Session::flash('flash_message', 'The team member was successfully removed.');
+        Session::flash('flash_type', 'success');
 
         return Redirect::route('projects.show', ['project_id' => $project_id]);
     }

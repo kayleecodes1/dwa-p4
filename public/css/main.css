@@ -113,3 +113,35 @@ body {
     padding-top: 20px;
     border-top: 1px solid #CCC;
 }
+
+#flash-message {
+    position: fixed;
+    top: 0; right: 0; left: 0;
+    height: 50px;
+    line-height: 50px;
+    color: #4F4F4F;
+    text-align: center;
+    background: #E7E7E7;
+    padding: 0 20px;
+    overflow: hidden;
+    transition: top ease-in-out 0.8s;
+}
+
+#flash-message.flash-message--success {
+    color: #EFEFEF;
+    background: #43AC6A;
+}
+
+#flash-message.flash-message--warning {
+    color: #EFEFEF;
+    background: #F08A24;
+}
+
+#flash-message.flash-message--failure {
+    color: #EFEFEF;
+    background: #F04124;
+}
+
+#flash-message.flash-message--hidden {
+    top: -50px;
+}
