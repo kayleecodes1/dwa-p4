@@ -26,7 +26,7 @@ php artisan db:seed
 The logins for each test user are as follows:
 
 | Name | Email | Password |
-|-|-|-|
+| --- | --- | --- |
 | Test User 1 | test1@test.com | test |
 | Test User 2 | test2@test.com | test |
 | Test User 3 | test3@test.com | test |
