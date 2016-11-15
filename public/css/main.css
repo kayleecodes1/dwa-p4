@@ -66,14 +66,25 @@ h2 {
     color: #000;
 }
 
+#siteHeader .user-section {
+    float: right;
+}
+
+#siteHeader .user-section .welcome {
+    font-size: 13px;
+    margin-right: 10px;
+}
+
 #siteHeader nav {
     float: right;
     margin-top: 14px;
 }
 
-#siteHeader nav a.button {
+#siteHeader nav a,
+#siteHeader nav button {
     float: left;
     display: block;
+    box-sizing: border-box;
     font-weight: 600;
     font-size: 0.7rem;
     line-height: 30px;
@@ -85,24 +96,28 @@ h2 {
     margin-left: 10px;
     opacity: 0.6;
     transition: opacity 0.2s linear;
+    cursor: pointer;
 }
 
-#siteHeader nav a.button.main {
+#siteHeader nav a.main,
+#siteHeader nav button.main {
     color: #FFF;
     background: #00B298;
 }
 
-#siteHeader nav a.button.secondary {
+#siteHeader nav a.secondary,
+#siteHeader nav button.secondary {
     color: #00B298;
     background: #FFF;
 }
 
 #siteHeader nav a:hover,
-#siteHeader nav a.active {
+#siteHeader nav button:hover {
     opacity: 1;
 }
 
-#siteHeader nav a:first-child {
+#siteHeader nav a:first-child,
+#siteHeader nav button:first-child {
     margin-left: 0;
 }
 
