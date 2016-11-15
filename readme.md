@@ -27,6 +27,8 @@ The logins for each test user are as follows:
 
 | Name | Email | Password |
 | --- | --- | --- |
+| Jill | jill@harvard.edu | helloworld |
+| Jamal | jamal@harvard.edu | helloworld |
 | Test User 1 | test1@test.com | test |
 | Test User 2 | test2@test.com | test |
 | Test User 3 | test3@test.com | test |

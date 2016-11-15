@@ -8,8 +8,20 @@ class DatabaseSeeder extends Seeder {
 
     public function run() {
 
-        // Add 5 test users.
+        // Add required users and 5 other test users.
         $user_ids = array();
+        $jill_id = DB::table('users')->insertGetId([
+            'name' => 'Jill',
+            'email' => 'jill@harvard.edu',
+            'password' => Hash::make('helloworld')
+        ]);
+        array_push($user_ids, $jill_id);
+        $jamal_id = DB::table('users')->insertGetId([
+            'name' => 'Jamal',
+            'email' => 'jamal@harvard.edu',
+            'password' => Hash::make('helloworld')
+        ]);
+        array_push($user_ids, $jamal_id);
         foreach (range(1, 5) as $i) {
             $user_id = DB::table('users')->insertGetId([
                 'name' => 'Test User ' . $i,
