@@ -6,8 +6,8 @@
 @stop
 
 @section('content')
-    {{ $project->title }}
-    <h1>Edit Task</h1>
+    <h1>{{ $project->title }}</h1>
+    <h2>Edit Task</h2>
     <form id="form_edit_task" class="form-resource" method="POST" action="{{ route('tasks.update', ['project_id' => $project->id, 'task_id' => $task->id]) }}">
         {{ method_field('PUT') }}
         <label>

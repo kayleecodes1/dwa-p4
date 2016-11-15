@@ -6,8 +6,8 @@
 @stop
 
 @section('content')
-    {{ $project->title }}
-    <h1>Add Team Member</h1>
+    <h1>{{ $project->title }}</h1>
+    <h2>Add Team Member</h2>
     <form id="form_create_member" class="form-resource" method="POST" action="{{ route('project_members.store', ['project_id' => $project->id]) }}">
         <label>
             <span>User</span>

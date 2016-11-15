@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-    <h1>Create New Project</h1>
+    <h2>Create New Project</h2>
     <form id="form_create_project" class="form-resource" method="POST" action="{{ route('projects.store') }}">
         <label>
             <span>Title</span>
@@ -28,7 +28,7 @@
         </label>
         <div class="form-resource__button-row">
             <a href="{{ route('home.index') }}">Cancel</a>
-            <button form="form_create_project">Create New Project</button>
+            <button class="main" form="form_create_project">Create New Project</button>
         </div>
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>

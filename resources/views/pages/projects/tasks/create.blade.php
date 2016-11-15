@@ -6,8 +6,8 @@
 @stop
 
 @section('content')
-    {{ $project->title }}
-    <h1>Add Task</h1>
+    <h1>{{ $project->title }}</h1>
+    <h2>Add Task</h2>
     <form id="form_create_task" class="form-resource" method="POST" action="{{ route('tasks.store', ['project_id' => $project->id]) }}">
         <label>
             <span>Title</span>

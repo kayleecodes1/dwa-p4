@@ -1,0 +1,123 @@
+/* Tasks Table */
+
+.tasks-table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tasks-table tr {
+
+}
+
+.tasks-table tr:first-child {
+
+}
+
+.tasks-table tr th,
+.tasks-table tr td {
+    text-align: left;
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+    padding: 0 6px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.tasks-table tr td:first-child {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tasks-table tr td:last-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tasks-table tr th {
+    font-weight: 600;
+}
+
+.tasks-table tr th.tasks-table__status,
+.tasks-table tr td.tasks-table__status {
+    width: 100px;
+}
+
+.tasks-table tr td.tasks-table__title {
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.tasks-table tr th.tasks-table__assignee,
+.tasks-table tr td.tasks-table__assignee {
+    width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.tasks-table tr th.tasks-table__edit,
+.tasks-table tr td.tasks-table__edit {
+    width: 56px;
+    text-align: center;
+}
+
+.tasks-table tr th.tasks-table__delete,
+.tasks-table tr td.tasks-table__delete {
+    width: 56px;
+    text-align: center;
+}
+
+.tasks-table__task--done td {
+    opacity: 0.3;
+}
+
+.tasks-table__task--done td.tasks-table__title {
+    text-decoration: line-through;
+}
+
+.tasks-table tr td.tasks-table__edit a,
+.tasks-table tr td.tasks-table__delete button {
+    display: inline-block;
+    font-size: 13px;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0;
+    cursor: pointer;
+}
+
+.tasks-table tr td.tasks-table__edit a:hover,
+.tasks-table tr td.tasks-table__delete button:hover {
+    opacity: 0.7;
+}
+
+.tasks-table tr td.tasks-table__edit a {
+    color: #23888C;
+}
+
+.tasks-table tr td.tasks-table__delete button {
+    color: #C13838;
+}
+
+.tasks-table__task td:first-child {
+    position: relative;
+    padding-left: 16px;
+}
+
+.tasks-table__task td:first-child::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 6px;
+}
+
+.tasks-table__task--to-do td:first-child::after {
+    background: #AAA;
+}
+
+.tasks-table__task--in-progress td:first-child::after {
+    background: #23888C;
+}

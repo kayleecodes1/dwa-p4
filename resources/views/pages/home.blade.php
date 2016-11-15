@@ -1,18 +1,23 @@
 @extends('layouts/default')
 
 @section('head')
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/home.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/project.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/tasks.css') }}" />
 @stop
 
 @section('content')
     @if ($show_projects)
-        <h1>Tasks Assigned to You</h1>
         @foreach (['Your Projects' => $owned_projects, 'Other Projects' => $other_projects] as $heading => $projects)
+            <h1>{{ $heading }}</h1>
             @if ($heading == 'Your Projects')
-                <a href="{{ URL::route('projects.create') }}">Create New Project</a>
+                <div class="project-button-row">
+                    <a class="project-button" href="{{ URL::route('projects.create') }}">
+                        <i class="fa fa-plus"></i> Create New Project
+                    </a>
+                </div>
             @endif
-            <h2>{{ $heading }}</h2>
             @if (count($projects) == 0)
                 No projects to display
             @endif
@@ -20,19 +25,6 @@
                 <a href="{{ URL::route('projects.show', ['project_id' => $project->id]) }}">
                     <h3>{{ $project->title }}</h3>
                 </a>
-                <ul>
-                    @if (count($project->user_tasks) > 0)
-                        @foreach ($project->user_tasks as $task)
-                            <li>
-                                {{ $task->title }}
-                                {{ $task->status }}
-                            </li>
-                        @endforeach
-                    @else
-                        No tasks.
-                    @endif
-                </ul>
-
             @endforeach
         @endforeach
     @else

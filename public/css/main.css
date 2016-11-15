@@ -22,6 +22,18 @@ body {
     margin: 0 auto;
 }
 
+h1 {
+    font-weight: 900;
+    font-size: 30px;
+    margin: 0 0 16px 0;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 21px;
+    margin: 0 0 16px 0;
+}
+
 #siteHeader {
     width: 100%;
     height: 60px;
@@ -99,11 +111,6 @@ body {
     padding: 20px 0 50px 0;
 }
 
-#siteContent h1 {
-    font-size: 1.5rem;
-    margin: 0 0 1rem 0;
-}
-
 #siteFooter {
     position: absolute;
     bottom: 0; left: 0;
@@ -144,4 +151,12 @@ body {
 
 #flash-message.flash-message--hidden {
     top: -50px;
+}
+
+.section-divider {
+    height: 1px;
+    width: 100%;
+    background: #CCC;
+    margin: 24px 0;
+    overflow: hidden;
 }
