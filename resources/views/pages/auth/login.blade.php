@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-    <form id="form_login" class="form_login" method="POST" action="{{ route('login.submit') }}">
+    <form id="form_login" class="form-login" method="POST" action="{{ route('login.submit') }}">
         @if ($errors->has('auth'))
             <span class="error">
                 {{ $errors->first('auth') }}

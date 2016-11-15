@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-    <form id="form_register" class="form_login" method="POST" action="{{ route('register.submit') }}">
+    <form id="form_register" class="form-login" method="POST" action="{{ route('register.submit') }}">
         <label>
             <span>Name</span>
             <input type="text" name="name" value="{{ old('name') }}" />
