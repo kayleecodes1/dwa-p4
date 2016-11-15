@@ -2,12 +2,13 @@
 
 @section('head')
     <link rel="stylesheet" href="{{ URL::asset('css/form.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/resource.css') }}" />
 @stop
 
 @section('content')
     {{ $project->title }}
     <h1>Add Team Member</h1>
-    <form id="form_create_member" method="POST" action="{{ route('project_members.store', ['project_id' => $project->id]) }}">
+    <form id="form_create_member" class="form-resource" method="POST" action="{{ route('project_members.store', ['project_id' => $project->id]) }}">
         <label>
             <span>User</span>
             <select name="user_id">
@@ -22,8 +23,10 @@
                 </span>
             @endif
         </label>
-        <a href="{{ route('projects.show', ['project_id' => $project->id]) }}">Cancel</a>
-        <button class="main" form="form_create_member">Add Team Member</button>
+        <div class="form-resource__button-row">
+            <a href="{{ route('projects.show', ['project_id' => $project->id]) }}">Cancel</a>
+            <button class="main" form="form_create_member">Add Team Member</button>
+        </div>
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>
 @stop

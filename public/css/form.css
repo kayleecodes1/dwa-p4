@@ -46,25 +46,69 @@ form label span.annotation {
 }
 
 form input[type='text'],
-form input[type='password'] {
+form input[type='password'],
+form textarea {
+    width: 250px;
+    max-width: 100%;
     font-size: 0.8rem;
     box-sizing: border-box;
-    height: 32px;
-    width: 250px;
-    padding: 0 10px;
     border-radius: 3px;
     border: 1px solid #CCC;
     outline: none;
 }
 
 form input[type='text'].small,
-form input[type='password'].small {
+form input[type='password'].small,
+form textarea.small {
     width: 60px;
 }
 
+form input[type='text'].large,
+form input[type='password'].large,
+form textarea.large {
+    width: 400px;
+}
+
+form input[type='text'].extra-large,
+form input[type='password'].extra-large,
+form textarea.extra-large {
+    width: 650px;
+}
+
+form input[type='text'].full,
+form input[type='password'].full,
+form textarea.full {
+    width: 100%;
+}
+
 form input[type='text'].centered,
-form input[type='password'].centered {
+form input[type='password'].centered,
+form textarea.centered {
     text-align: center;
+}
+
+form input[type='text'],
+form input[type='password'] {
+    height: 32px;
+    padding: 0 10px;
+}
+
+form textarea {
+    resize: none;
+    height: 120px;
+    padding: 10px;
+    overflow: none;
+    overflow-y: auto;
+}
+
+form textarea.medium {
+    width: 400px;
+}
+
+form select {
+    width: 250px;
+    max-width: 100%;
+    font-size: 0.8rem;
 }
 
 form button {

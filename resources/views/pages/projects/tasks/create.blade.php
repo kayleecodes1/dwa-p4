@@ -2,15 +2,16 @@
 
 @section('head')
     <link rel="stylesheet" href="{{ URL::asset('css/form.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/resource.css') }}" />
 @stop
 
 @section('content')
     {{ $project->title }}
     <h1>Add Task</h1>
-    <form id="form_create_task" method="POST" action="{{ route('tasks.store', ['project_id' => $project->id]) }}">
+    <form id="form_create_task" class="form-resource" method="POST" action="{{ route('tasks.store', ['project_id' => $project->id]) }}">
         <label>
             <span>Title</span>
-            <input type="text" name="title" value="{{ old('title') }}" />
+            <input class="extra-large" type="text" name="title" value="{{ old('title') }}" />
             @if ($errors->has('title'))
                 <span class="error">
                     {{ $errors->first('title') }}
@@ -19,7 +20,7 @@
         </label>
         <label>
             <span>Description</span>
-            <textarea name="description">{{ old('description') }}</textarea>
+            <textarea class="extra-large" name="description">{{ old('description') }}</textarea>
             @if ($errors->has('description'))
                 <span class="error">
                     {{ $errors->first('description') }}
@@ -48,8 +49,10 @@
                 </span>
             @endif
         </label>
-        <a href="{{ route('projects.show', ['project_id' => $project->id]) }}">Cancel</a>
-        <button class="main" form="form_create_task">Add Task</button>
+        <div class="form-resource__button-row">
+            <a href="{{ route('projects.show', ['project_id' => $project->id]) }}">Cancel</a>
+            <button class="main" form="form_create_task">Add Task</button>
+        </div>
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
     </form>
 @stop
