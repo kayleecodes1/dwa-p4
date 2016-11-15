@@ -25,13 +25,13 @@ body {
 h1 {
     font-weight: 900;
     font-size: 30px;
-    margin: 0 0 16px 0;
+    margin: 16px 0;
 }
 
 h2 {
     font-weight: 600;
     font-size: 21px;
-    margin: 0 0 16px 0;
+    margin: 8px 0 16px 0;
 }
 
 #siteHeader {

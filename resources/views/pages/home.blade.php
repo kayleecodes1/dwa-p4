@@ -19,13 +19,18 @@
                 </div>
             @endif
             @if (count($projects) == 0)
-                No projects to display
+                <em>No projects to display.</em>
+            @else
+                <ul class="project-list">
+                @foreach ($projects as $project)
+                    <li>
+                        <a href="{{ URL::route('projects.show', ['project_id' => $project->id]) }}">
+                            <i class="fa fa-bookmark"></i> {{ $project->title }}</h3>
+                        </a>
+                    </li>
+                @endforeach
+                </ul>
             @endif
-            @foreach ($projects as $project)
-                <a href="{{ URL::route('projects.show', ['project_id' => $project->id]) }}">
-                    <h3>{{ $project->title }}</h3>
-                </a>
-            @endforeach
         @endforeach
     @else
         //TODO: welcome message

@@ -102,7 +102,7 @@
             @endforeach
         </table>
     @else
-        <em>No tasks.</em>
+        <em>No tasks to display.</em>
     @endif
 
 @stop
