@@ -33,6 +33,8 @@
             @endif
         @endforeach
     @else
-        //TODO: welcome message
+        <h1>Welcome to TaskMaster!</h1>
+        <p><strong>TaskMaster</strong> is a web application for managing projects and tracking tasks associated with those projects. The basic functionality of the application is to create teams of users, create projects with team members, create tasks associated with projects, and assign users on a team to those tasks.</p>
+        <p><em>To start tracking tasks, please login or register using the links above.</em></p>
     @endif
 @stop
