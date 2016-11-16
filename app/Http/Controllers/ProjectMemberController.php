@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\BaseController;
+use App\Http\Controllers\BaseControllerGuarded;
 use App\Project;
 use App\User;
 use Illuminate\Http\Request;
@@ -13,7 +13,7 @@ use Illuminate\Validation\Rule;
 use Redirect;
 use View;
 
-class ProjectMemberController extends BaseController {
+class ProjectMemberController extends BaseControllerGuarded {
 
     public function create($project_id) {
 

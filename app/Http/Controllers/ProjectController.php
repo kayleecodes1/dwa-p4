@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\BaseController;
+use App\Http\Controllers\BaseControllerGuarded;
 use App\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Session;
 use Redirect;
 use View;
 
-class ProjectController extends BaseController {
+class ProjectController extends BaseControllerGuarded {
 
     public function show($project_id) {
 
