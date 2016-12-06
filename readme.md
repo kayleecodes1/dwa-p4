@@ -45,4 +45,4 @@ The project uses the **Laravel** framework. It also uses **Faker** (included wit
 
 Live URL: [http://p4.kylepixel.com/](http://p4.kylepixel.com/)
 
-Screencast URL: [https://youtu.be/<id>](https://youtu.be/<id>)
+Screencast URL: [https://youtu.be/vb1kDDYn-Eo](https://youtu.be/vb1kDDYn-Eo)
